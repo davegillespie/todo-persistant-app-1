@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>To Do App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4=" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="container">
+        <section class="section">
+            <div class="columns">
+                <div class="column">
+                    <div class="list" id="toDoList">
+                        
+                    </div>
+                </div>
+        
+                <div class="column">
+                    <form id="toDoForm">
+                        <div class="field">
+                            <div class="control">
+                                <label class="label" for="toDoNameInput">
+                                    Name:
+                                    <input class="input" type="text" id="toDoNameInput" name="toDoNameInput" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="label" for="toDoNotesInput">
+                                    Notes:
+                                    <textarea class="input" id="toDoNotesInput" name="toDoNotesInput"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="label" for="toDoDoneSelect">
+                                    Done?
+                                </label>
+                                <div class="select">
+                                    <select id="toDoDoneSelect" name="toDoDoneSelect">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No" selected>No</option>
+                                    </select>
+                                </div>   
+                                <button class="button is-dark is-pulled-right" id="btnSubmit">Add</button>             
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            
+                
+            </div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
