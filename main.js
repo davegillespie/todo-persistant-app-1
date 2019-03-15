@@ -27,25 +27,24 @@ $.get({
   function submit() {
     console.log($('#toDoNameInput').val());
     console.log($('#toDoNotesInput').val());
-    console.log($('#toDoDoneSelect option:selected').text())
+    console.log($('#toDoDoneSelect option:selected').text());
+    $.ajax({
+      headers: {
+        authorization: `Bearer ${Airtable.API_KEY}`,
+        contentType: "application/json",
+      },
+      url: `${Airtable.API}/To%20Do`,
+      data: {
+        "fields": {
+          "Name": $('#toDoNameInput').val(),
+          "Notes": $('#toDoNotesInput').val(),
+          "Done": $('#toDoDoneSelect option:selected').text(),
+        },
+      },
+      method: "POST"
+  });
 
 }
     // Start your $.post here
-    $('#btnSubmit').on('click', () => {    // getElementById use the #, ByClass use the .
-      $.ajax({
-        headers: {
-          authorization: `Bearer ${Airtable.API_KEY}`,
-          contentType: "application/json",
-        },
-        url: `${Airtable.API}/To%20Do`,
-        data: {
-          "fields": {
-            "Name": $('#toDoNameInput').val(),
-            "Notes": $('#toDoNotesInput').val(),
-            "Done": $('#toDoDoneSelect option:selected').text(),
-          },
-        },
-        method: "POST"
-    });
-  });
+    $('#btnSubmit').on('click', submit);
 });
